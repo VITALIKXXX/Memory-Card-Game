@@ -46,3 +46,17 @@ const createBoard = () => {
     });
 };
 
+const flipCard = () => {
+    if (lockBoard || this === firstCard) return;
+
+    this.classList.add("flipped");
+
+    if (!firstCard) {
+        firstCard = this;
+        return;
+    }
+
+    secondCard = this;
+    lockBoard = true;
+
+};
