@@ -59,4 +59,34 @@ const flipCard = () => {
     secondCard = this;
     lockBoard = true;
 
+    checkMatch();
 };
+
+const checkMatch = () => {
+    let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+    isMatch ? disableCards() : unflipCards();
+};
+
+const disableCards = () => {
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+    resetBoard();
+};
+
+const unflipCards = () => {
+    errors++;
+    errorDisplay.textContent = errors;
+
+    setTimeout(() => {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
+        resetBoard();
+    }, 1000);
+};
+
+const resetBoard = () => {
+    [firstCard, secondCard] = [null, null];
+    lockBoard = false;
+};
+
+createBoard();
