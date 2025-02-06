@@ -41,3 +41,7 @@
 .front {
     background: url('back.png') no-repeat center/cover;
 }
+
+.back {
+    transform: rotateY(180deg);
+}
