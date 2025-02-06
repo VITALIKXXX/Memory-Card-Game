@@ -36,6 +36,13 @@ const createBoard = () => {
         const backFace = document.createElement("div");
         backFace.classList.add("back");
         backFace.style.backgroundImage = `url('${image}')`;
+
+        card.appendChild(frontFace);
+        card.appendChild(backFace);
+        card.addEventListener("click", flipCard);
+
+        board.appendChild(card);
+        cards.push(card);
     });
 };
 
