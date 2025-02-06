@@ -1,19 +1,27 @@
 .body {
     text-align: center;
+    background-color: #f4f4f4;
 }
 
 .board {
-    height: 532px;
-    width: 475px;
-    margin: 0 auto;
+    width: 500px;
+    height: 550px;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: red;
-    border: 10px solid lightblue;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card {
-    height: 128px;
-    width: 90px;
-    margin: 2.5px;
+    width: 100px;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
 }
