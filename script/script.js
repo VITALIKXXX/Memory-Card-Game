@@ -18,3 +18,5 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let errors = 0;
+
+const shuffele = array => array.sort(() => Math.random() - 0.5);
