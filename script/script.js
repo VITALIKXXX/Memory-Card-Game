@@ -27,5 +27,11 @@ const createBoard = () => {
     shuffledCards.forEach(image => {
         const card = document.createElement("div");
         card.classList.add("card");
+        card.dataset.image = image;
+
+        const frontFace = document.createElement("div");
+        frontFace.classList.add("front");
+        frontFace.style.backgroundImage = "url('back.png')";
     });
 };
+
