@@ -19,4 +19,13 @@ let secondCard = null;
 let lockBoard = false;
 let errors = 0;
 
-const shuffele = array => array.sort(() => Math.random() - 0.5);
+const shuffle = array => array.sort(() => Math.random() - 0.5);
+
+const createBoard = () => {
+    const shuffledCards = shuffle([...cardImages]);
+
+    shuffledCards.forEach(image => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+    });
+};
