@@ -11,4 +11,10 @@ const cardImages = [
     "stars",
     "vini",
     "wirtz"
-]
+];
+
+let cards = [];
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let errors = 0;
