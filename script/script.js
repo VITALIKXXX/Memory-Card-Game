@@ -2,15 +2,15 @@ const board = document.querySelector(".board");
 const errorDisplay = document.querySelector(".errors");
 
 const cardImages = [
-    "bruyne",
-    "degaard",
-    "haaland",
-    "hajrizi",
-    "mbappe",
-    "robert",
-    "stars",
-    "vini",
-    "wirtz"
+    "images/vini.jpg", "images/vini.jpg",
+    "images/wirtz.jpg", "images/wirtz.jpg",
+    "images/hajrizi.jpg", "images/hajrizi.jpg",
+    "images/haaland.jpg", "images/haaland.jpg",
+    "images/bruyne.jpg", "images/bruyne.jpg",
+    "images/robert.jpg", "images/robert.jpg",
+    "images/degaard.jpg", "images/degaard.jpg",
+    "images/stars.jpg", "images/stars.jpg",
+    "images/mbappe.jpg", "images/mbappe.jpg"
 ];
 
 let cards = [];
@@ -46,17 +46,18 @@ const createBoard = () => {
     });
 };
 
-const flipCard = () => {
-    if (lockBoard || this === firstCard) return;
+const flipCard = (event) => {
+    const card = event.currentTarget;
+    if (lockBoard || card === firstCard) return;
 
-    this.classList.add("flipped");
+    card.classList.add("flipped");
 
     if (!firstCard) {
-        firstCard = this;
+        firstCard = card;
         return;
     }
 
-    secondCard = this;
+    secondCard = card;
     lockBoard = true;
 
     checkMatch();
