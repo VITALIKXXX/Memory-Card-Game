@@ -31,7 +31,6 @@ const createBoard = () => {
 
         const frontFace = document.createElement("div");
         frontFace.classList.add("front");
-        frontFace.style.backgroundImage = "url('back.png')";
 
         const backFace = document.createElement("div");
         backFace.classList.add("back");
