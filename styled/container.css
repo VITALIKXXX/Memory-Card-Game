@@ -1,6 +1,6 @@
 .body {
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #272851;
 }
 
 .board {
@@ -12,7 +12,7 @@
     gap: 10px;
     justify-content: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: #3e3e4c;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -40,11 +40,18 @@
 }
 
 .front {
-    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
 }
 
 .back {
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
+}
+
+.errors {
+    font-size: 40px;
 }
