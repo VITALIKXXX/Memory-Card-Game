@@ -9,7 +9,7 @@ const cardImages = [
     "images/bruyne.jpg", "images/bruyne.jpg",
     "images/robert.jpg", "images/robert.jpg",
     "images/degaard.jpg", "images/degaard.jpg",
-    "images/stars.jpg", "images/stars.jpg",
+    "images/stars.webp", "images/stars.webp",
     "images/mbappe.jpg", "images/mbappe.jpg"
 ];
 
