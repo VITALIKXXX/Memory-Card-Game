@@ -36,12 +36,15 @@
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 5px;
 }
 
 .front {
-    background: url('back.png') no-repeat center/cover;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
 }
 
 .back {
+    background-size: cover;
+    background-position: center;
     transform: rotateY(180deg);
 }
