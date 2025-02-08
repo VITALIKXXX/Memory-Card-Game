@@ -1,5 +1,6 @@
 const board = document.querySelector(".board");
 const errorDisplay = document.querySelector(".errors");
+const movesDisplay = document.querySelector(".moves");
 
 const cardImages = [
     "images/vini.jpg", "images/vini.jpg",
@@ -18,6 +19,7 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let errors = 0;
+let moves = 0;
 
 const shuffle = array => array.sort(() => Math.random() - 0.5);
 
@@ -64,6 +66,9 @@ const flipCard = (event) => {
 };
 
 const checkMatch = () => {
+    moves++;
+    movesDisplay.textContent = moves;
+
     let isMatch = firstCard.dataset.image === secondCard.dataset.image;
     isMatch ? disableCards() : unflipCards();
 };
