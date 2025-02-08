@@ -90,4 +90,14 @@ const resetBoard = () => {
     lockBoard = false;
 };
 
+const reavelAllCards = () => {
+    cards.forEach(card => card.classList.add("flipped"));
+
+    setTimeout(() => {
+        cards.forEach(card => card.classList.remove("flipped"));
+    }, 5000);
+};
+
 createBoard();
+
+setTimeout(reavelAllCards, 500);
