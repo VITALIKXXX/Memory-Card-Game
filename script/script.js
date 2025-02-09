@@ -1,6 +1,10 @@
 const board = document.querySelector(".board");
 const errorDisplay = document.querySelector(".errors");
 const movesDisplay = document.querySelector(".moves");
+const endScreen = document.querySelector(".end__screen");
+const resultText = document.querySelector(".result__text");
+const errorsCount = document.querySelector(".errors__count");
+const movesCount = document.querySelector(".moves__count");
 
 const cardImages = [
     "images/vini.jpg", "images/vini.jpg",
@@ -71,6 +75,32 @@ const checkMatch = () => {
 
     let isMatch = firstCard.dataset.image === secondCard.dataset.image;
     isMatch ? disableCards() : unflipCards();
+
+    checkGameEnd();
+};
+
+const checkGameEnd = () => {
+    if (document.querySelectorAll(".card:not(.flipped)").length === 0) {
+        showEndScreen();
+    }
+};
+
+const showEndScreen = () => {
+    endScreen.classList.remove("hidden");
+
+    errorsCount.textContent = errors;
+    movesCount.textContent = moves;
+
+    if (errors <= 5) {
+        resultText.textContent = "EXCELLENT!";
+        resultText.style.color = "green";
+    } else if (errors <= 10) {
+        resultText.textContent = "GOOD JOB!";
+        resultText.style.color = "blue";
+    } else {
+        resultText.textContent = "TRY AGAIN";
+        resultText.style.color = "red";
+    }
 };
 
 const disableCards = () => {
