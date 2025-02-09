@@ -52,10 +52,6 @@
     transform: rotateY(180deg);
 }
 
-.errors {
-    font-size: 40px;
-}
-
 .end__screen {
     position: fixed;
     top: 50%;
