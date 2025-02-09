@@ -108,3 +108,20 @@
         font-size: 14px;
     }
 }
+
+.restart__btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.restart__btn:hover {
+    background-color: #e74c3c;
+}
