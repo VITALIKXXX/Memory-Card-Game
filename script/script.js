@@ -5,6 +5,7 @@ const endScreen = document.querySelector(".end__screen");
 const resultText = document.querySelector(".result__text");
 const errorsCount = document.querySelector(".errors__count");
 const movesCount = document.querySelector(".moves__count");
+const restartButton = document.querySelector(".result__button");
 
 const cardImages = [
     "images/vini.jpg", "images/vini.jpg",
@@ -28,6 +29,8 @@ let moves = 0;
 const shuffle = array => array.sort(() => Math.random() - 0.5);
 
 const createBoard = () => {
+    board.innerHTML = "";
+    cards = [];
     const shuffledCards = shuffle([...cardImages]);
 
     shuffledCards.forEach(image => {
@@ -132,6 +135,34 @@ const reavelAllCards = () => {
         cards.forEach(card => card.classList.remove("flipped"));
     }, 5000);
 };
+
+const resetGame = () => {
+    errors = 0;
+    moves = 0;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    errorDisplay.textContent = errors;
+    movesDisplay.textContent = moves;
+    errorsCount.textContent = errors;
+    movesCount.textContent = moves;
+
+    endScreen.classList.add("hidden");
+    createBoard();
+
+    setTimeout(() => {
+        cards.forEach(card => card.classList.add("flipped"));
+    }, 300);
+
+    setTimeout(() => {
+        cards.forEach(card => card.classList.remove("flipped"));
+    }, 5000);
+
+
+};
+
+restartButton.addEventListener("click", resetGame);
 
 createBoard();
 
