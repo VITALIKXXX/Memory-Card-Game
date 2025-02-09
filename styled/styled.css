@@ -6,7 +6,6 @@ html {
 ::after,
 ::before {
     box-sizing: inherit;
-    color: whitesmoke;
     font-size: 22px;
     font-weight: 500;
 }
