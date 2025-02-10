@@ -25,6 +25,18 @@ let secondCard = null;
 let lockBoard = false;
 let errors = 0;
 let moves = 0;
+let timeElapsed = 0;
+let timer;
+
+const startTimer = () => {
+    timeElapsed = 0;
+    clearInterval(timer);
+    timer = setInterval(() => {
+        timeElapsed++;
+    }, 1000);
+};
+
+const stopTimer = () => clearInterval(timer);
 
 const shuffle = array => array.sort(() => Math.random() - 0.5);
 
@@ -89,10 +101,15 @@ const checkGameEnd = () => {
 };
 
 const showEndScreen = () => {
+    stopTimer();
     endScreen.classList.remove("hidden");
 
     errorsCount.textContent = errors;
     movesCount.textContent = moves;
+
+    const timeDisplay = document.createElement("p");
+    timeDisplay.textContent = `Time: ${timeElapsed} seconds`;
+    endScreen.appendChild(timeDisplay);
 
     if (errors <= 5) {
         resultText.textContent = "EXCELLENT!";
@@ -137,6 +154,7 @@ const reavelAllCards = () => {
 };
 
 const resetGame = () => {
+    startTimer();
     errors = 0;
     moves = 0;
     firstCard = null;
