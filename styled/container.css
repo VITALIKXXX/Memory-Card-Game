@@ -109,7 +109,7 @@
     }
 }
 
-.restart__btn {
+.restart__button {
     margin-top: 15px;
     padding: 10px 20px;
     font-size: 18px;
@@ -124,4 +124,8 @@
 
 .restart__btn:hover {
     background-color: #e74c3c;
+}
+
+.time__game {
+    color: whitesmoke;
 }
