@@ -6,6 +6,7 @@ const resultText = document.querySelector(".result__text");
 const errorsCount = document.querySelector(".errors__count");
 const movesCount = document.querySelector(".moves__count");
 const restartButton = document.querySelector(".result__button");
+const timerDisplay = document.querySelector(".timer");
 
 const cardImages = [
     "images/vini.jpg", "images/vini.jpg",
@@ -31,9 +32,11 @@ let timeRunning = false;
 
 const startTimer = () => {
     timeElapsed = 0;
+    timerDisplay.textContent = timeElapsed;
     clearInterval(timer);
     timer = setInterval(() => {
         timeElapsed++;
+        timerDisplay.textContent = timeElapsed;
     }, 1000);
 };
 
