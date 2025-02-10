@@ -27,6 +27,7 @@ let errors = 0;
 let moves = 0;
 let timeElapsed = 0;
 let timer;
+let timeRunning = false;
 
 const startTimer = () => {
     timeElapsed = 0;
@@ -36,7 +37,10 @@ const startTimer = () => {
     }, 1000);
 };
 
-const stopTimer = () => clearInterval(timer);
+const stopTimer = () => {
+    clearInterval(timer)
+    timeRunning = false;
+};
 
 const shuffle = array => array.sort(() => Math.random() - 0.5);
 
@@ -68,6 +72,10 @@ const createBoard = () => {
 };
 
 const flipCard = (event) => {
+    if (!timeRunning) {
+        startTimer();
+        timeRunning = true;
+    }
     const card = event.currentTarget;
     if (lockBoard || card === firstCard) return;
 
@@ -155,6 +163,7 @@ const reavelAllCards = () => {
 
 const resetGame = () => {
     startTimer();
+    timeRunning = false;
     errors = 0;
     moves = 0;
     firstCard = null;
