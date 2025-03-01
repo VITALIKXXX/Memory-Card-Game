@@ -80,7 +80,11 @@ const flipCard = (event) => {
         timeRunning = true;
     }
     const card = event.currentTarget;
-    if (lockBoard || card === firstCard) return;
+    if (lockBoard || card === firstCard) {
+        return;
+    }
+
+
 
     card.classList.add("flipped");
 
